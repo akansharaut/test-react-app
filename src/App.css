@@ -23,6 +23,15 @@
 
 .App-link {
   color: #61dafb;
+} 
+
+.register-button {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
 }
 
 @keyframes App-logo-spin {

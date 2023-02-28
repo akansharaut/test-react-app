@@ -1,16 +1,24 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginPage from './components/LoginPage';
+import RegisterPage from './components/RegisterPage';
 import logo from './database_icon.png';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="App-header">
-          Welcome to the Dataset Registry
-      </h1>
-      <LoginPage logo={logo}/>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route exact path='/' element={< LoginPage logo= {logo} />}></Route> 
+          <Route exact path='/register' element={< RegisterPage />}></Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
