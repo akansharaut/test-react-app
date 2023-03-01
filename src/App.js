@@ -6,7 +6,7 @@ import logo from './database_icon.png';
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
 } from 'react-router-dom';
 
 function App() {
