@@ -4,21 +4,18 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import logo from './database_icon.png';
 import {
-  BrowserRouter as Router,
   Routes,
-  Route,
+  Route
 } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route exact path='/' element={< LoginPage logo= {logo} />}></Route> 
-          <Route exact path='/register' element={< RegisterPage />}></Route>
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <Routes>
+        <Route exact path='/' element={< LoginPage logo= {logo} />}></Route> 
+        <Route exact path='/register' element={< RegisterPage />}></Route>
+      </Routes>
+    </div>
   );
 }
 
