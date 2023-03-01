@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { MdFileUpload }  from 'react-icons/md';
@@ -15,7 +15,7 @@ const RegisterPage = () => {
 
     return (
       <>
-        <div style={{margin: '0 0 0 70px'}}>
+        <div style={{margin: '0 0 0 70px'}} className="text-center">
           <ButtonGroup aria-label="Basic example" className='button-list'>
             <Button variant="light"><AiOutlinePlus></AiOutlinePlus> Make a DB conncection</Button>
             <Button variant="light">
