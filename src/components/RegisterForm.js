@@ -1,25 +1,31 @@
-import {TextField, Box}from '@material-ui/core';
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
 
-const LabTabs= () => {
+const RegisterForm = ({fileName}) => {
   return (
-    <div>
-    <div>New Data</div>
-    <hr/>
-      <Box>
-      <TextField
-          id="outlined-required"
-          placeholder="Data Name"
-          variant="outlined"
-          style={{margin: '0 20px 0 0'}}
-        />
+    <Box className='container'>
+      <label>New Data</label>
+      <hr/>
+      <Box style={{margin: '0 0 50px 0'}}>
         <TextField
-          id="outlined-required"
-          placeholder="Data Description"
-          variant="outlined"
-        />
+            required
+            id="outlined-required"
+            label="Required"
+            defaultValue="Data Name"
+            value={fileName}
+            style={{margin: '0 20px 0 0'}}
+          />
+          <TextField
+            required
+            id="outlined-required"
+            label="Required"
+            style={{width: '400px'}}
+            value={fileName ? `This is ${fileName} type data`: null}
+            defaultValue="Data Description"
+          />
       </Box>
-    </div>
+    </Box>
   );
 }
 
-export default LabTabs;
+export default RegisterForm;

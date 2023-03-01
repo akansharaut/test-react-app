@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const LoginPage = ({logo}) => {
     return (
-      <div>
+      <div className='login-page'>
         <h1 className="App-header">
             Welcome to the Dataset Registry
         </h1>

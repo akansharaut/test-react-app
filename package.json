@@ -4,8 +4,8 @@
   "private": true,
   "homepage": "http://akansharaut.github.io/test-react-app",
   "dependencies": {
-    "@material-ui/core": "^4.12.4",
-    "@mui/icons-material": "^5.11.11",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.11.11",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
