@@ -1,0 +1,42 @@
+{
+	"Order ID": {
+		"logical_element": ["Index"],
+		"physical_element_description": ["Unique identifier for each row in the dataframe"],
+		"pii_flag": ["No"]
+	},
+	"Product": {
+		"logical_element": ["Product"],
+		"physical_element_description": ["Name of the product purchased"],
+		"pii_flag": ["No"]
+	},
+	"Quantity Ordered": {
+		"logical_element": ["Quantity Ordered"],
+		"physical_element_description": ["Number of items purchased in an order"],
+		"pii_flag": ["No"]
+	},
+	"Price Each": {
+		"logical_element": ["Price Each"],
+		"physical_element_description": ["Price of each item purchased in an order"],
+		"pii_flag": ["No"]
+	},
+	"Order Date": {
+		"logical_element": ["Order Date"],
+		"physical_element_description": ["Date and time when the order was placed"],
+		"pii_flag": ["No"]
+	},
+	"Purchase Address": {
+		"logical_element": ["Purchase Address"],
+		"physical_element_description": ["Address where the order was shipped to"],
+		"pii_flag": ["Yes"]
+	},
+	"Credit Card": {
+		"logical_element": ["Credit Card"],
+		"physical_element_description": ["Credit card used to make the purchase"],
+		"pii_flag": ["Yes"]
+	},
+	"SSN": {
+		"logical_element": ["SSN"],
+		"physical_element_description": ["Social Security Number of the customer making the purchase"],
+		"pii_flag": ["Yes"]
+	}
+}

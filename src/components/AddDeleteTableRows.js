@@ -1,31 +1,15 @@
 import { useState } from "react";
 import TableRows from "./TableRows"
 
-function AddDeleteTableRows(){
+const AddDeleteTableRows = ({columns}) => {
+  console.log(columns);
   const [rowsData, setRowsData] = useState([]);
-  const addTableRows = ()=>{
-    const rowsInput={
-        pdElement:'',
-        ldElement:'',
-        description:'',
-        pii: '' ,
-    } 
-    setRowsData([...rowsData, rowsInput])
+  const handleChange = (index, evnt)=> {
+    const { name, value } = evnt.target;
+    const rowsInput = [...rowsData];
+    rowsInput[index][name] = value;
+    setRowsData(rowsInput);
   }
-
-  const deleteTableRows = (index)=>{
-    const rows = [...rowsData];
-    rows.splice(index, 1);
-    setRowsData(rows);
-  }
- 
-  const handleChange = (index, evnt)=>{
-  
-  const { name, value } = evnt.target;
-  const rowsInput = [...rowsData];
-  rowsInput[index][name] = value;
-  setRowsData(rowsInput);
-}
 
   return(
       <div className="container">
@@ -39,14 +23,11 @@ function AddDeleteTableRows(){
                         <th>Logical Data Element</th>
                         <th>Physical Data Element Description</th>
                         <th>PII</th>
-                        <th><button className="btn btn-outline-success" onClick={addTableRows} >+</button></th>
                     </tr>
 
                   </thead>
                   <tbody>
-
-                  <TableRows rowsData={rowsData} deleteTableRows={deleteTableRows} handleChange={handleChange} />
-
+                  <TableRows columns={columns} handleChange={handleChange} />
                   </tbody> 
               </table>
 

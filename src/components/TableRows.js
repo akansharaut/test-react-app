@@ -1,20 +1,27 @@
-function TableRows({rowsData, deleteTableRows, handleChange}) {
-    return(
-      rowsData.map((data, index)=>{
-        const {pdElement, ldElement, description, pii}= data;
+import Suggestions from "./Suggestions";
+import dataSuggestions from '../orders.json';
+import SelectOption from './SelectOption';
+
+function TableRows({columns, handleChange}) {
+  console.log(dataSuggestions);
+    return (
+      columns.map((column, index)=>{
+        const lgElement = dataSuggestions[column].logical_element[0];
+        const pyElementDesc = dataSuggestions[column].physical_element_description[0];
+        const piiFlag = dataSuggestions[column].pii_flag[0];
+        console.log(piiFlag);
           return(
             <tr key={index}>
-              <td><input type="text" value={pdElement} onChange={(evnt)=>(handleChange(index, evnt))} name="pdElement" className="form-control"/></td>
-              <td><input type="text" value={ldElement}  onChange={(evnt)=>(handleChange(index, evnt))} name="ldElement" className="form-control"/> </td>
-              <td><input type="text" value={description}  onChange={(evnt)=>(handleChange(index, evnt))} name="description" className="form-control" /> </td>
-              <td><input type="text" value={pii}  onChange={(evnt)=>(handleChange(index, evnt))} name="pii" className="form-control" /> </td>
-              <td><button className="btn btn-outline-danger" onClick={()=>(deleteTableRows(index))}>x</button></td>
+              <td><input type="text" value={column} name="pdElement" className="form-control"/></td>
+              <td><Suggestions data={lgElement}/></td>
+              <td><Suggestions data={pyElementDesc}/></td>
+              <td>
+                <SelectOption data={piiFlag}/>
+              </td>
             </tr>
           )
       })
-   
-    )
-    
+    );
 }
 
 export default TableRows;
